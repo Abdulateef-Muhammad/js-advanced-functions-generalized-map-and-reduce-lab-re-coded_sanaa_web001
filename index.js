@@ -18,7 +18,7 @@ function reduce(sourceArray, callback, start) {
         index = 1;
     }
     for (; index < sourceArray.length; index++) {
-        aggregate = callback(sourceArray[index], aggregate);
+        aggregate = callback(aggregate, sourceArray[index]);
     }
 
     return aggregate;
