@@ -18,7 +18,7 @@ function reduce(sourceArray, callback, start) {
         index = 1;
     }
     for (; index < sourceArray.length; index++) {
-        aggregate = parseInt(callback(aggregate, sourceArray[index]));
+        aggregate = callback(sourceArray[index], aggregate);
     }
 
     return aggregate;
@@ -27,5 +27,5 @@ function reduce(sourceArray, callback, start) {
 console.log(
     reduce([1, 2, 3], function(a, b) {
         return a + b;
-    })
+    }, 4)
 );
